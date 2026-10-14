@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#2f4a3a">
 <title>나의 레시피북</title>
-<meta name="app-version" content="2026-10-14.1">
+<meta name="app-version" content="2026-10-14.2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWvSURBVHhe7ds9q5xlFIXh/CMrC2caIdgoQSEQFIMQFVIoCgE/UBSCIIIooiLBShHttBEEEcEqlT/Byj/yyoyckP3MHFhZ78c88677gavR7Mku9p0ck+OVx57eDECqK+0/AJIQAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRwEq88MatQXm7H9fOJiOAlSAADwF0Rj1kd44AKgLojHrI7hwBVATQGfWQ3TkCqKIDUI9miqcenrqTO6fukYIAFnrq4ak7uXPqHikIYKGnHp66kzun7pGCABZ66uGpO7lz6h4pCGChpx6eupM7p+6RggAWeurhqTu5c+oeKQhgoacenrqTO6fukYIAFnrq4ak7uXPqHimiA5jC1Ienfp47p+6RggBGmvrw1M9z59Q9UhDASFMfnvp57py6RwoCGGnqw1M/z51T90hBACNNfXjq57lz6h4pCGCkqQ9P/Tx3Tt0jBQGMNPXhqZ/nzql7pCCAkaY+PPXz3Dl1jxQEMNLUh6d+njun7pGCAEaa+vDUz3Pn1D1SEMBIUx+e+nnunLpHCgIYaerDUz/PnVP3SEEAIz3q4f15/6/2X1lv7B74X3QA6tFM8QigTwSw0COAPhHAQo8A+kQACz0C6BMBLPQIoE8EsNAjgD4RwEKPAPpEAAs99fDUndw5dY8UBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8du6Yqzev7T+v9d6nd4ePv/ls76vv7+2/HfriW6KfuH714HPcndQ5AqgI4ITv2DGqO7lzx37OZARwwvfm3bftndw5AqgI4IRv92WRu5M7RwAVAZzwfffzj/ZO7hwBVARwwrf7j2F3J3eOACoCOPFzd3LnCKAigBM/dyd3jgAqAhjxLv5M/zK//P7rg78DuPDKO6/tf97LDlHdyZ277OdNFR1Aj9RDducIoCKAzqiH7M4RQEUAnVEP2Z0jgIoAOqMesjtHABUBdEY9ZHeOACoC6Ix6yO4cAVQE0Bn1kN05AqgIoDPqIbtzBFARQGfUQ3bnCKAigM6oh+zOEUBFAJ1RD9mdI4CKADqjHrI7RwAVAXRGPWR3jgAqAuiMesjuHAFUBNAZ9ZDdOQKoCGAlCMBDACtBAB4CQDQCQDQCwIGnbmyG27c3wyfvbvdefnU7PHl9e/Dj1oAA8MCNlzbD/Xvb4d+fjvvjy+3wzPOHc+eMALC3+5W+Pfhj/vlhO3z01np+NyAAyMf/sLVEQADhdl/2tMet2P1OsIYvhwgg3N/fHh636rcvzv93AQII9tyL3q/+D9s8e/i554QAgt15fXwAN28dfu45IYBgX384PoAP7pz3l0EEEIwACCAaXwIRQDT+I5gA4vHHoEf+IXLsvoRpD1vBX4RhNT5//9Ej4FshsBqPX9Mj4JvhsFp8OzTA/xAD5CAARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARPsPhDLQv9guZEkAAAAASUVORK5CYII=">
@@ -275,17 +275,44 @@ async function analyze({link,caption,file,images=[]}){
 
   // 모델이 없거나(404) 그 모델의 무료 한도가 찼으면(429) 다음 후보 모델로 넘어감. 한도는 모델마다 따로라서.
   const tries=[settings.model,...MODEL_FALLBACKS.filter(m=>m!==settings.model)];
-  let res,j,all404=true;
+  let res,j,out='',all404=true;
   for(const model of tries){
-    const call=()=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,{
-      method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':settings.apiKey},body:JSON.stringify(body)});
-    res=await call(); j=await res.json().catch(()=>({}));
+    const call=async()=>{
+      // 답을 조금씩 받는 방식(스트리밍): 오래 걸려도 데이터가 계속 오니 아이폰 사파리가 연결을 끊지 않음
+      let r;
+      for(let n=0;;n++){
+        try{
+          r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:streamGenerateContent?alt=sse`,{
+            method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':settings.apiKey},body:JSON.stringify(body)});
+          break;
+        }catch(e){if(n>=1||document.hidden) throw new Error('NET');await new Promise(z=>setTimeout(z,1500))}
+      }
+      if(!r.ok) return {status:r.status,ok:false,j:await r.json().catch(()=>({})),text:''};
+      let text='',buf='',err=null;
+      const rd=r.body.getReader(),dec=new TextDecoder();
+      try{
+        for(;;){
+          const {value,done}=await rd.read(); if(done) break;
+          buf+=dec.decode(value,{stream:true});
+          let i;while((i=buf.indexOf('\n'))>=0){
+            const line=buf.slice(0,i).trim();buf=buf.slice(i+1);
+            if(!line.startsWith('data:')) continue;
+            try{const d=JSON.parse(line.slice(5));if(d.error)err=d.error;
+              ((d.candidates&&d.candidates[0]&&d.candidates[0].content&&d.candidates[0].content.parts)||[]).forEach(p=>{if(p.text&&!p.thought)text+=p.text})}catch(e){}
+          }
+        }
+      }catch(e){throw new Error('NET')}
+      if(err) return {status:err.code||500,ok:false,j:{error:err},text:''};
+      return {status:200,ok:true,j:{},text};
+    };
+    const run=async()=>{const c=await call();res=c;j=c.j;out=c.text};
+    await run();
     // 구글 서버가 바쁘면(503/500) 잠깐 쉬었다가 같은 모델로 한 번 더
     for(let k=0;k<2&&(res.status===503||res.status===500);k++){
-      await new Promise(r=>setTimeout(r,2000*(k+1))); res=await call(); j=await res.json().catch(()=>({}));
+      await new Promise(r=>setTimeout(r,2000*(k+1))); await run();
     }
     if(res.status===400&&body.generationConfig.mediaResolution&&/media_?resolution/i.test(JSON.stringify(j))){
-      delete body.generationConfig.mediaResolution; res=await call(); j=await res.json().catch(()=>({}));
+      delete body.generationConfig.mediaResolution; await run();
     }
     if(res.status!==404) all404=false;
     if(res.ok){if(all404&&model!==settings.model){settings.model=model;save(LS_SET,settings)}break}
@@ -299,7 +326,6 @@ async function analyze({link,caption,file,images=[]}){
     if(res.status===503||res.status===500) throw new Error('구글 AI 서버가 지금 너무 바빠요. 1~2분 뒤에 다시 눌러 주세요. (넣은 사진과 링크는 그대로 있어요)');
     throw new Error('분석 실패 ('+res.status+'): '+msg);
   }
-  const out=(j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts||[]).map(p=>p.text||'').join('');
   const data=extractJson(out);
   if(!data) throw new Error('AI 답변을 레시피로 바꾸지 못했어요. 다시 시도하거나 설명을 붙여넣어 주세요.');
   if(data.notRecipe) throw new Error(useSearch?'이 게시물에서 레시피를 읽어 오지 못했어요. 게시물 설명(캡션)을 복사해 붙여넣거나, 영상을 저장해 파일로 올려 주세요.':'레시피를 찾지 못했어요. 요리 영상이 맞는지 확인해 주세요.');
@@ -465,6 +491,16 @@ function renderAdd(){
     if(settings.apiKey&&(addState.images.length||(l&&l.platform==='youtube'))) runAnalyze(); else renderAdd();
   };
 }
+/* 분석 중 화면 꺼짐 방지(지원하는 기기만) */
+let wake=null;
+async function keepAwake(){try{wake=await navigator.wakeLock.request('screen')}catch(e){wake=null}}
+function releaseWake(){try{wake&&wake.release()}catch(e){}wake=null}
+function errText(e){
+  const m=e&&e.message||'';
+  if(m==='NET'||/Load failed|Failed to fetch|NetworkError|network connection/i.test(m))
+    return '분석 중에 연결이 끊겼어요. 인터넷이 잘 되는지 확인하고, 분석하는 동안에는 다른 앱으로 넘어가지 말고 이 화면을 켜 둔 채 기다려 주세요. 다시 누르면 넣은 사진과 링크 그대로 다시 시작해요.';
+  return m;
+}
 function baseRecipe(link){
   return {id:uid(),url:link?link.url:'',platform:link?link.platform:'none',videoId:link?link.videoId:'',shorts:!!(link&&link.shorts),kind:link&&link.kind||'',
     title:'',author:'',summary:'',servings:null,time:'',difficulty:'',ingredients:[],steps:[],tips:[],tags:[],memo:'',fav:false,source:'ai',createdAt:Date.now()};
@@ -475,6 +511,7 @@ async function runAnalyze(){
     document.getElementById('toSet').onclick=e=>{e.preventDefault();go({name:'settings'})};return}
   if(link){const dup=recipes.find(r=>r.url&&r.url===link.url);if(dup){toast('이미 저장된 레시피예요');go({name:'detail',id:dup.id});return}}
   addState.busy=true;addState.err='';renderAdd();
+  keepAwake();
   try{
     const [d,meta]=await Promise.all([analyze({link,caption:addState.caption.trim(),file:addState.file,images:addState.images}),link&&link.platform!=='web'?fetchTitle(link):null]);
     const r=Object.assign(baseRecipe(link),normalize(d));
@@ -487,9 +524,9 @@ async function runAnalyze(){
     view={name:'detail',id:r.id};hRep({v:view});render();window.scrollTo(0,0);
   }catch(e){
     addState.busy=false;
-    addState.err=e.message==='NO_KEY'?'설정에서 API 키를 넣어 주세요.':esc(e.message==='Failed to fetch'?'인터넷 연결을 확인해 주세요.':e.message);
+    addState.err=e.message==='NO_KEY'?'설정에서 API 키를 넣어 주세요.':esc(errText(e));
     renderAdd();
-  }
+  }finally{releaseWake()}
 }
 
 function renderDetail(){
@@ -549,7 +586,7 @@ function renderDetail(){
     if(!settings.apiKey){toast('설정에서 API 키를 먼저 넣어 주세요');return}
     re.disabled=true;re.innerHTML='<span class="spin"></span>분석 중';
     try{const d=normalize(await analyze({link:parseUrl(r.url)}));Object.assign(r,d,{memo:r.memo,fav:r.fav,tags:r.tags.length?r.tags:d.tags});persist();delete cook[r.id];toast('다시 정리했어요');renderDetail()}
-    catch(e){toast(e.message==='NO_KEY'?'설정에서 API 키를 넣어 주세요':e.message);re.disabled=false;re.textContent='다시 분석'}
+    catch(e){toast(e.message==='NO_KEY'?'설정에서 API 키를 넣어 주세요':errText(e));re.disabled=false;re.textContent='다시 분석'}
   };
 }
 function keepScroll(fn){const y=window.scrollY;fn();window.scrollTo(0,y)}
