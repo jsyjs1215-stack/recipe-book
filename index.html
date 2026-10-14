@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#2f4a3a">
 <title>나의 레시피북</title>
+<meta name="app-version" content="2026-10-14.1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWvSURBVHhe7ds9q5xlFIXh/CMrC2caIdgoQSEQFIMQFVIoCgE/UBSCIIIooiLBShHttBEEEcEqlT/Byj/yyoyckP3MHFhZ78c88677gavR7Mku9p0ck+OVx57eDECqK+0/AJIQAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRwEq88MatQXm7H9fOJiOAlSAADwF0Rj1kd44AKgLojHrI7hwBVATQGfWQ3TkCqKIDUI9miqcenrqTO6fukYIAFnrq4ak7uXPqHikIYKGnHp66kzun7pGCABZ66uGpO7lz6h4pCGChpx6eupM7p+6RggAWeurhqTu5c+oeKQhgoacenrqTO6fukYIAFnrq4ak7uXPqHimiA5jC1Ienfp47p+6RggBGmvrw1M9z59Q9UhDASFMfnvp57py6RwoCGGnqw1M/z51T90hBACNNfXjq57lz6h4pCGCkqQ9P/Tx3Tt0jBQGMNPXhqZ/nzql7pCCAkaY+PPXz3Dl1jxQEMNLUh6d+njun7pGCAEaa+vDUz3Pn1D1SEMBIUx+e+nnunLpHCgIYaerDUz/PnVP3SEEAIz3q4f15/6/2X1lv7B74X3QA6tFM8QigTwSw0COAPhHAQo8A+kQACz0C6BMBLPQIoE8EsNAjgD4RwEKPAPpEAAs99fDUndw5dY8UBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8du6Yqzev7T+v9d6nd4ePv/ls76vv7+2/HfriW6KfuH714HPcndQ5AqgI4ITv2DGqO7lzx37OZARwwvfm3bftndw5AqgI4IRv92WRu5M7RwAVAZzwfffzj/ZO7hwBVARwwrf7j2F3J3eOACoCOPFzd3LnCKAigBM/dyd3jgAqAhjxLv5M/zK//P7rg78DuPDKO6/tf97LDlHdyZ277OdNFR1Aj9RDducIoCKAzqiH7M4RQEUAnVEP2Z0jgIoAOqMesjtHABUBdEY9ZHeOACoC6Ix6yO4cAVQE0Bn1kN05AqgIoDPqIbtzBFARQGfUQ3bnCKAigM6oh+zOEUBFAJ1RD9mdI4CKADqjHrI7RwAVAXRGPWR3jgAqAuiMesjuHAFUBNAZ9ZDdOQKoCGAlCMBDACtBAB4CQDQCQDQCwIGnbmyG27c3wyfvbvdefnU7PHl9e/Dj1oAA8MCNlzbD/Xvb4d+fjvvjy+3wzPOHc+eMALC3+5W+Pfhj/vlhO3z01np+NyAAyMf/sLVEQADhdl/2tMet2P1OsIYvhwgg3N/fHh636rcvzv93AQII9tyL3q/+D9s8e/i554QAgt15fXwAN28dfu45IYBgX384PoAP7pz3l0EEEIwACCAaXwIRQDT+I5gA4vHHoEf+IXLsvoRpD1vBX4RhNT5//9Ej4FshsBqPX9Mj4JvhsFp8OzTA/xAD5CAARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARPsPhDLQv9guZEkAAAAASUVORK5CYII=">
@@ -279,18 +280,23 @@ async function analyze({link,caption,file,images=[]}){
     const call=()=>fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,{
       method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':settings.apiKey},body:JSON.stringify(body)});
     res=await call(); j=await res.json().catch(()=>({}));
+    // 구글 서버가 바쁘면(503/500) 잠깐 쉬었다가 같은 모델로 한 번 더
+    for(let k=0;k<2&&(res.status===503||res.status===500);k++){
+      await new Promise(r=>setTimeout(r,2000*(k+1))); res=await call(); j=await res.json().catch(()=>({}));
+    }
     if(res.status===400&&body.generationConfig.mediaResolution&&/media_?resolution/i.test(JSON.stringify(j))){
       delete body.generationConfig.mediaResolution; res=await call(); j=await res.json().catch(()=>({}));
     }
     if(res.status!==404) all404=false;
     if(res.ok){if(all404&&model!==settings.model){settings.model=model;save(LS_SET,settings)}break}
-    if(res.status!==404&&res.status!==429) break;
+    if(![404,429,500,503].includes(res.status)) break; // 그래도 바쁘면 다른 모델로
   }
   if(!res.ok){
     const msg=(j.error&&j.error.message)||res.statusText;
     if(res.status===400&&/API key/i.test(msg)) throw new Error('API 키가 올바르지 않아요. 설정에서 키를 다시 확인해 주세요.');
     if(res.status===429) throw new Error('구글 무료 사용량 한도에 걸렸어요. 1분쯤 뒤에 다시 해 보고, 계속 이러면 오늘 무료 한도를 다 쓴 거라 내일 다시 되거나 AI Studio에서 결제를 연결하면 바로 풀려요.');
     if(res.status===404) throw new Error('쓸 수 있는 Gemini 모델을 찾지 못했어요. AI Studio에서 최신 Flash 모델 이름을 확인해 설정에 넣어 주세요.');
+    if(res.status===503||res.status===500) throw new Error('구글 AI 서버가 지금 너무 바빠요. 1~2분 뒤에 다시 눌러 주세요. (넣은 사진과 링크는 그대로 있어요)');
     throw new Error('분석 실패 ('+res.status+'): '+msg);
   }
   const out=(j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts||[]).map(p=>p.text||'').join('');
@@ -650,6 +656,23 @@ document.getElementById('fab').onclick=()=>go({name:'add'});
     if(settings.apiKey) runAnalyze();
   }
   else render();
+})();
+
+/* 새 버전 자동 반영: 열 때마다 서버의 최신 파일을 받아 버전이 다르면 한 번 새로고침.
+   cache:'reload'로 받으면 브라우저 저장본도 새 파일로 바뀌어서 다음 로드부터 새 버전이 나옴 */
+(async function(){
+  if(!/^https?:$/.test(location.protocol)) return;
+  const mine=document.querySelector('meta[name="app-version"]').content;
+  try{
+    const t=await (await fetch(location.pathname,{cache:'reload'})).text();
+    const m=t.match(/name="app-version" content="([^"]+)"/);
+    if(!m||m[1]===mine) return;
+    let tried='';try{tried=sessionStorage.getItem('rb-upd')||''}catch(e){}
+    if(tried===m[1]) return; // 이미 한 번 새로고침했는데도 그대로면 반복하지 않음
+    try{sessionStorage.setItem('rb-upd',m[1])}catch(e){}
+    if(view.name==='list'||view.name==='detail'||(view.name==='add'&&!hasInput())) location.reload();
+    else toast('새 버전이 있어요. 지금 작업을 마친 뒤 앱을 다시 열면 반영돼요');
+  }catch(e){}
 })();
 </script>
 </body>
