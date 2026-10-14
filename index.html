@@ -158,7 +158,10 @@ function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}cat
 
 let recipes=load(LS_RECIPES,null);
 if(!recipes){recipes=[sampleRecipe()];save(LS_RECIPES,recipes)}
-let settings=Object.assign({apiKey:'',model:'gemini-2.5-flash',theme:'auto'},load(LS_SET,{}));
+const DEFAULT_MODEL='gemini-3.8-flash';
+const MODEL_FALLBACKS=['gemini-3.8-flash','gemini-3.6-flash','gemini-flash-latest','gemini-2.5-flash'];
+let settings=Object.assign({apiKey:'',model:DEFAULT_MODEL,theme:'auto'},load(LS_SET,{}));
+if(settings.model==='gemini-2.5-flash'){settings.model=DEFAULT_MODEL;save(LS_SET,settings)} // 예전 기본값 자동 교체
 applyTheme();
 
 function persist(){save(LS_RECIPES,recipes)}
@@ -244,14 +247,20 @@ async function analyze({link,caption,file}){
   if(useSearch) body.tools=[{google_search:{}}];
   else body.generationConfig.responseMimeType='application/json';
 
-  const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(settings.model)}:generateContent`,{
-    method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':settings.apiKey},body:JSON.stringify(body)});
-  const j=await res.json().catch(()=>({}));
+  // 설정한 모델이 없으면(404) 후보 모델을 차례로 시도하고, 되는 모델을 설정에 기억
+  const tries=[settings.model,...MODEL_FALLBACKS.filter(m=>m!==settings.model)];
+  let res,j;
+  for(const model of tries){
+    res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,{
+      method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':settings.apiKey},body:JSON.stringify(body)});
+    j=await res.json().catch(()=>({}));
+    if(res.status!==404){if(res.ok&&model!==settings.model){settings.model=model;save(LS_SET,settings)}break}
+  }
   if(!res.ok){
     const msg=(j.error&&j.error.message)||res.statusText;
     if(res.status===400&&/API key/i.test(msg)) throw new Error('API 키가 올바르지 않아요. 설정에서 키를 다시 확인해 주세요.');
     if(res.status===429) throw new Error('오늘 쓸 수 있는 무료 분석량을 넘었거나 너무 자주 요청했어요. 잠시 뒤 다시 시도해 주세요.');
-    if(res.status===404) throw new Error(`"${settings.model}" 모델을 찾을 수 없어요. 설정에서 모델 이름을 바꿔 주세요.`);
+    if(res.status===404) throw new Error('쓸 수 있는 Gemini 모델을 찾지 못했어요. AI Studio에서 최신 Flash 모델 이름을 확인해 설정에 넣어 주세요.');
     throw new Error('분석 실패 ('+res.status+'): '+msg);
   }
   const out=(j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts||[]).map(p=>p.text||'').join('');
@@ -537,7 +546,7 @@ function renderSettings(){
     <p class="hint">레시피는 이 기기 브라우저에 저장돼요. 다른 기기로 옮기거나 백업하려면 내보내기 파일을 만들어 두세요. 레시피 ${recipes.length}개.</p>
     <div class="row"><button class="btn" id="s_exp">내보내기 (.json)</button><label class="btn" for="s_imp">가져오기</label><input id="s_imp" type="file" accept="application/json,.json" hidden></div>
   </div>`;
-  document.getElementById('s_save').onclick=()=>{settings.apiKey=document.getElementById('s_key').value.trim();settings.model=document.getElementById('s_model').value.trim()||'gemini-2.5-flash';save(LS_SET,settings);toast('저장했어요')};
+  document.getElementById('s_save').onclick=()=>{settings.apiKey=document.getElementById('s_key').value.trim();settings.model=document.getElementById('s_model').value.trim()||DEFAULT_MODEL;save(LS_SET,settings);toast('저장했어요')};
   document.getElementById('s_theme').onchange=e=>{settings.theme=e.target.value;save(LS_SET,settings);applyTheme()};
   document.getElementById('s_exp').onclick=()=>{
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({app:'recipebook',v:1,recipes},null,1)],{type:'application/json'}));
