@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#2f4a3a">
 <title>나의 레시피북</title>
-<meta name="app-version" content="2026-10-14.12">
+<meta name="app-version" content="2026-10-15.1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWvSURBVHhe7ds9q5xlFIXh/CMrC2caIdgoQSEQFIMQFVIoCgE/UBSCIIIooiLBShHttBEEEcEqlT/Byj/yyoyckP3MHFhZ78c88677gavR7Mku9p0ck+OVx57eDECqK+0/AJIQAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRAKIRwEq88MatQXm7H9fOJiOAlSAADwF0Rj1kd44AKgLojHrI7hwBVATQGfWQ3TkCqKIDUI9miqcenrqTO6fukYIAFnrq4ak7uXPqHikIYKGnHp66kzun7pGCABZ66uGpO7lz6h4pCGChpx6eupM7p+6RggAWeurhqTu5c+oeKQhgoacenrqTO6fukYIAFnrq4ak7uXPqHimiA5jC1Ienfp47p+6RggBGmvrw1M9z59Q9UhDASFMfnvp57py6RwoCGGnqw1M/z51T90hBACNNfXjq57lz6h4pCGCkqQ9P/Tx3Tt0jBQGMNPXhqZ/nzql7pCCAkaY+PPXz3Dl1jxQEMNLUh6d+njun7pGCAEaa+vDUz3Pn1D1SEMBIUx+e+nnunLpHCgIYaerDUz/PnVP3SEEAIz3q4f15/6/2X1lv7B74X3QA6tFM8QigTwSw0COAPhHAQo8A+kQACz0C6BMBLPQIoE8EsNAjgD4RwEKPAPpEAAs99fDUndw5dY8UBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8dm5O7k7qHAFUBCC8du6Yqzev7T+v9d6nd4ePv/ls76vv7+2/HfriW6KfuH714HPcndQ5AqgI4ITv2DGqO7lzx37OZARwwvfm3bftndw5AqgI4IRv92WRu5M7RwAVAZzwfffzj/ZO7hwBVARwwrf7j2F3J3eOACoCOPFzd3LnCKAigBM/dyd3jgAqAhjxLv5M/zK//P7rg78DuPDKO6/tf97LDlHdyZ277OdNFR1Aj9RDducIoCKAzqiH7M4RQEUAnVEP2Z0jgIoAOqMesjtHABUBdEY9ZHeOACoC6Ix6yO4cAVQE0Bn1kN05AqgIoDPqIbtzBFARQGfUQ3bnCKAigM6oh+zOEUBFAJ1RD9mdI4CKADqjHrI7RwAVAXRGPWR3jgAqAuiMesjuHAFUBNAZ9ZDdOQKoCGAlCMBDACtBAB4CQDQCQDQCwIGnbmyG27c3wyfvbvdefnU7PHl9e/Dj1oAA8MCNlzbD/Xvb4d+fjvvjy+3wzPOHc+eMALC3+5W+Pfhj/vlhO3z01np+NyAAyMf/sLVEQADhdl/2tMet2P1OsIYvhwgg3N/fHh636rcvzv93AQII9tyL3q/+D9s8e/i554QAgt15fXwAN28dfu45IYBgX384PoAP7pz3l0EEEIwACCAaXwIRQDT+I5gA4vHHoEf+IXLsvoRpD1vBX4RhNT5//9Ej4FshsBqPX9Mj4JvhsFp8OzTA/xAD5CAARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARCMARPsPhDLQv9guZEkAAAAASUVORK5CYII=">
@@ -336,7 +336,8 @@ const PROMPT=`너는 요리 영상에서 레시피를 정리하는 도우미야.
 {"notRecipe":false,"title":"요리 이름","author":"채널/작성자(알면)","summary":"한두 문장 소개","servings":2,"time":"20분","difficulty":"쉬움|보통|어려움",
 "ingredients":[{"group":"주재료","name":"돼지고기 앞다리살","amount":"300g"}],
 "steps":[{"text":"...","t":35}],"tips":["..."],"tags":["한식","돼지고기"],"folder":"반찬"}
-folder는 다음 중 하나만 골라: 밥·면, 국·찌개, 반찬, 고기·생선, 간식·디저트, 음료, 기타.
+folder는 다음 중 하나만 골라: 밥·면, 국·찌개, 반찬, 고기·생선, 소스·양념, 간식·디저트, 음료, 기타.
+소스·양념장·드레싱·만능간장처럼 다른 요리에 쓰려고 만드는 것은 소스·양념.
 계란찜·전·나물·조림·무침·볶음처럼 밥과 곁들여 먹는 요리는 반찬, 고기나 해산물이 주인공인 요리는 고기·생선. 기타는 정말 어디에도 안 맞을 때만 골라.`;
 
 async function analyze({link,caption,file,images=[]}){
@@ -502,12 +503,16 @@ function render(){
 }
 
 /* ───────── 폴더(종류) ───────── */
-const FOLDERS=[['밥·면','🍚'],['국·찌개','🥘'],['반찬','🥗'],['고기·생선','🍖'],['간식·디저트','🍰'],['음료','🥤'],['기타','📁']];
+const FOLDERS=[['밥·면','🍚'],['국·찌개','🥘'],['반찬','🥗'],['고기·생선','🍖'],['소스·양념','🥫'],['간식·디저트','🍰'],['음료','🥤'],['기타','📁']];
+/* 직접 만들었던 폴더 이름이 기본 폴더와 같은 뜻이면 기본 폴더로 합침 */
+const FOLDER_ALIAS={'소스':'소스·양념','양념':'소스·양념','소스/양념':'소스·양념','소스 양념':'소스·양념'};
 const FOLDER_NAMES=FOLDERS.map(f=>f[0]);
 function folderIcon(n){const f=FOLDERS.find(x=>x[0]===n);return f?f[1]:'📂'}
 /* 폴더가 없는 레시피(예전에 담은 것)는 이름·태그로 짐작. 기기마다 같은 결과라 따로 저장하지 않음 */
 function guessFolder(r){
   const t=[r.title,...(r.tags||[])].join(' ');
+  // 소스·양념: 이름이 소스/양념장 등으로 끝나는 것만(크림소스 파스타 같은 건 제외)
+  if(/(소스|양념장|양념|드레싱|만능간장|맛간장|초장|쌈장|초고추장|페스토|마요네즈|딥)(\s*(꿀팁|모음|레시피|만들기|황금비율|비율|버전))*\s*$/.test(r.title||'')||/만능간장|만능양념|만능소스|양념장 만들기|소스 만들기/.test(t)) return '소스·양념';
   if(/라떼|커피|주스|에이드|스무디|칵테일|음료|하이볼|청$/.test(t)) return '음료';
   if(/맛탕|호떡|붕어빵|케이크|쿠키|빵|디저트|간식|푸딩|스콘|머핀|과자|아이스크림|떡볶이|토스트|와플|팬케이크|브라우니|타르트|마카롱/.test(t)) return '간식·디저트';
   if(/국수|면|파스타|라면|우동|소바|짬뽕|짜장|냉면|밥|김밥|죽|리조또|카레|오므라이스|주먹밥|초밥|덮밥/.test(t)) return '밥·면';
@@ -517,7 +522,7 @@ function guessFolder(r){
   return '기타';
 }
 /* AI가 '기타'로 넣은 건 이름으로 다시 짐작해 봄. 내가 직접 기타로 옮긴 것(folderSet)은 그대로 둠 */
-const folderOf=r=>(r.folder&&(r.folder!=='기타'||r.folderSet))?r.folder:guessFolder(r);
+const folderOf=r=>{const f=FOLDER_ALIAS[r.folder]||r.folder;return (f&&(f!=='기타'||r.folderSet))?f:guessFolder(r)};
 function allFolders(){const used=[...new Set(recipes.map(folderOf))];return [...FOLDER_NAMES.filter(n=>used.includes(n)),...used.filter(n=>!FOLDER_NAMES.includes(n)).sort()]}
 function folderOptions(cur){
   const names=[...new Set([...FOLDER_NAMES,...allFolders(),...(cur?[cur]:[])])];
