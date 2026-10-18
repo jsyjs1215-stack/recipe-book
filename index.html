@@ -3,30 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#2f4a3a">
+<meta name="theme-color" content="#fffaf4">
 <title>오늘 뭐 먹지</title>
 <meta name="apple-mobile-web-app-title" content="오늘 뭐 먹지">
-<meta name="app-version" content="2026-10-18.1">
+<meta name="app-version" content="2026-10-18.3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="apple-touch-icon" href="data:image/png;base64,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">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap">
 <style>
-/* 레이아웃: 상단 바 + 단일 컬럼(최대 720px). 목록은 2열 카드, 상세는 영상 → 재료 → 순서 */
+/* 레이아웃: 아기자기한 레시피 앱. 상단 로고 바 + 단일 컬럼(최대 720px) + 하단 메뉴 바.
+   첫 화면은 가로로 넘기는 사진 카드 줄, 분류는 동그란 버튼·알약 칩 */
 :root{
-  --bg:#f7f8f5; --surface:#ffffff; --ink:#1f2622; --muted:#66706a; --line:#dde2dc;
-  --accent:#2f4a3a; --accent-ink:#ffffff; --pick:#e2a63b; --pick-soft:#fbefd6; --danger:#b4432f;
-  --chip:#e9eee8;
-  --display:"Gowun Batang",ui-serif,"Batang",serif;
-  --body:"IBM Plex Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif;
-  --r:12px;
+  --bg:#fffaf4; --surface:#ffffff; --ink:#2e2724; --muted:#8c817a; --line:#f1e5da;
+  --accent:#ff7a52; --accent-ink:#ffffff; --pick:#ffb53d; --pick-soft:#fff2db; --danger:#e0533d;
+  --chip:#fff0e6; --mint:#e5f5ec; --mint-ink:#2f7a52;
+  --display:"Jua","Gowun Dodum",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --body:"Gowun Dodum",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --r:18px;
+  --shadow:0 4px 14px rgba(120,70,40,.08);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#141816; --surface:#1c211e; --ink:#e7ece8; --muted:#9aa49e; --line:#2e3631;
-  --accent:#8fc0a0; --accent-ink:#10140f; --pick:#e9b65a; --pick-soft:#3a2f18; --danger:#e07a64; --chip:#262d29; color-scheme:dark}}
+  --bg:#1c1816; --surface:#26201d; --ink:#f6eee8; --muted:#b4a79d; --line:#3a302b;
+  --accent:#ff9068; --accent-ink:#1c1410; --pick:#ffc25c; --pick-soft:#3b2d18; --danger:#ff7a63; --chip:#33281f;
+  --mint:#20352a; --mint-ink:#8fd7ad; --shadow:0 4px 14px rgba(0,0,0,.25); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#141816; --surface:#1c211e; --ink:#e7ece8; --muted:#9aa49e; --line:#2e3631;
-  --accent:#8fc0a0; --accent-ink:#10140f; --pick:#e9b65a; --pick-soft:#3a2f18; --danger:#e07a64; --chip:#262d29; color-scheme:dark}
+  --bg:#1c1816; --surface:#26201d; --ink:#f6eee8; --muted:#b4a79d; --line:#3a302b;
+  --accent:#ff9068; --accent-ink:#1c1410; --pick:#ffc25c; --pick-soft:#3b2d18; --danger:#ff7a63; --chip:#33281f;
+  --mint:#20352a; --mint-ink:#8fd7ad; --shadow:0 4px 14px rgba(0,0,0,.25); color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -37,14 +41,15 @@ img{max-width:100%;display:block}
 a{color:var(--accent)}
 :focus-visible{outline:2px solid var(--pick);outline-offset:2px}
 
-header.bar{position:sticky;top:0;z-index:10;background:var(--accent);color:var(--accent-ink);padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px}
-.bar-in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:10px}
-.bar h1{font:700 21px/1.2 var(--display);margin:0;flex:1;cursor:pointer;letter-spacing:-.01em}
-.iconbtn{background:transparent;border:0;color:inherit;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;cursor:pointer}
-.iconbtn:hover{background:rgba(255,255,255,.12)}
+header.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 8px}
+.bar-in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:6px}
+.bar h1{font:400 26px/1.2 var(--display);margin:0;flex:1;cursor:pointer;color:var(--accent);display:flex;align-items:center;gap:6px}
+.bar h1 .logo-bowl{font-size:22px}
+.iconbtn{background:transparent;border:0;color:inherit;width:40px;height:40px;border-radius:14px;display:grid;place-items:center;cursor:pointer}
+.iconbtn:hover{background:var(--chip)}
 .iconbtn svg{width:22px;height:22px}
 .cloud{position:relative}
-.cloud .dot{position:absolute;right:6px;bottom:7px;width:9px;height:9px;border-radius:50%;border:2px solid var(--accent);background:#6fcf8f}
+.cloud .dot{position:absolute;right:7px;bottom:8px;width:9px;height:9px;border-radius:50%;border:2px solid var(--bg);background:#4cc27f}
 .cloud[data-state="wait"] .dot,.cloud[data-state="busy"] .dot{background:var(--pick)}
 .cloud[data-state="err"] .dot{background:#e0604a}
 .sync-st{display:flex;gap:8px;align-items:flex-start;border-radius:10px;padding:10px 12px;background:var(--chip);font-size:14px}
@@ -53,9 +58,19 @@ header.bar{position:sticky;top:0;z-index:10;background:var(--accent);color:var(-
 pre.rules{font:12px/1.5 ui-monospace,Consolas,monospace;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto;margin:0;user-select:all}
 ol.howto{margin:0;padding-left:20px;font-size:14px;display:flex;flex-direction:column;gap:4px}
 
-main{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:16px 120px}
+main{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:8px calc(env(safe-area-inset-bottom,0px) + 110px)}
+h2,h3,.sec-h h3,.panel h2{font-family:var(--display)!important;font-weight:400!important}
 
-.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 14px;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+/* 하단 메뉴 바 */
+nav.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 10px calc(env(safe-area-inset-bottom,0px) + 6px)}
+.tab-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);align-items:center}
+.tab{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--muted);cursor:pointer;padding:6px 0;font-family:var(--body)}
+.tab svg{width:24px;height:24px}
+.tab.on{color:var(--accent)}
+.tab-add{justify-self:center;width:54px;height:54px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px color-mix(in srgb,var(--accent) 40%,transparent);margin-top:-18px}
+.tab-add svg{width:26px;height:26px}
+
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:9px 14px;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;gap:6px;justify-content:center}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btn.danger{color:var(--danger)}
 .btn:disabled{opacity:.5;cursor:default}
@@ -63,16 +78,48 @@ main{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:16px 120px}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 
 /* 목록 */
-.search{display:flex;gap:8px;margin-bottom:10px}
-.search input{flex:1;min-width:0;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.search{display:flex;gap:8px;margin-bottom:14px;position:relative}
+.search input{flex:1;min-width:0;padding:12px 16px 12px 42px;border:0;border-radius:999px;background:var(--chip);font-size:15px}
+.search::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:16px;transform:translateY(-50%);background:var(--muted);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") center/contain no-repeat}
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none}
-.chip{flex:none;border:1px solid transparent;background:var(--chip);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip{flex:none;border:1px solid transparent;background:var(--chip);border-radius:999px;padding:5px 13px;font-size:13px;cursor:pointer;white-space:nowrap}
 .chip.on{background:var(--accent);color:var(--accent-ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:12px}
-@media (max-width:440px){.grid{grid-template-columns:1fr 1fr;gap:10px}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;min-width:0;text-align:left;padding:0}
-.card:hover{border-color:var(--accent)}
-.thumb{aspect-ratio:4/3;background:var(--chip);position:relative;overflow:hidden;max-width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:14px 12px}
+@media (max-width:440px){.grid{grid-template-columns:1fr 1fr;gap:14px 10px}}
+.card{background:transparent;border:0;border-radius:var(--r);cursor:pointer;display:flex;flex-direction:column;min-width:0;text-align:left;padding:0}
+.card .thumb{border-radius:var(--r);box-shadow:var(--shadow)}
+.card:hover .thumb{transform:translateY(-2px)}
+.thumb{aspect-ratio:4/3;background:var(--chip);position:relative;overflow:hidden;max-width:100%;transition:transform .15s}
+@media (prefers-reduced-motion:reduce){.thumb{transition:none}}
+.tchip{position:absolute;left:8px;top:8px;background:rgba(255,255,255,.88);color:#2e2724;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:3px;z-index:2}
+/* 첫 화면 */
+.hello{margin:4px 2px 14px}
+.hello h2{font-size:24px;margin:0;line-height:1.3}
+.hello p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.cats{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 6px;margin:0 -16px 18px;padding-inline:16px}
+.cats::-webkit-scrollbar,.hscroll::-webkit-scrollbar,.pills::-webkit-scrollbar{display:none}
+.cat{flex:none;width:68px;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;padding:0;color:var(--ink)}
+.cat .ci{width:60px;height:60px;border-radius:50%;background:var(--chip);display:grid;place-items:center;font-size:28px;box-shadow:var(--shadow)}
+.cat .cn{font-size:12.5px;white-space:nowrap;line-height:1.2}
+.cat .cc{font-size:11px;color:var(--muted);line-height:1}
+.cat.fav .ci{background:var(--pick-soft);color:var(--pick);font-size:26px}
+.shelf{margin-bottom:22px}
+.shelf-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.shelf-h h3{font-size:19px;margin:0}
+.shelf-h .more{border:0;background:none;color:var(--muted);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:2px;padding:4px 0;white-space:nowrap}
+.hscroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;margin:0 -16px;padding:2px 16px 8px}
+.hscroll .card{flex:none;width:min(46vw,190px);scroll-snap-align:start}
+.findbox{background:var(--surface);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);margin-bottom:22px;display:flex;flex-direction:column;gap:12px}
+.findbox h3{font-size:19px;margin:0}
+.find-row{display:flex;flex-direction:column;gap:6px}
+.find-row .fl{font-size:13px;color:var(--muted)}
+.pills{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.pill{flex:none;border:0;border-radius:999px;padding:7px 12px;background:var(--chip);color:var(--ink);font-size:13.5px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.pill b{font-weight:400;color:var(--muted);font-size:12px}
+.pill.mild{background:var(--mint);color:var(--mint-ink)}
+.pill.hot{background:color-mix(in srgb,#ff5a3c 14%,var(--surface));color:#d4442b}
+.pill.pstar{background:var(--pick-soft)}
+.reshuffle{border:0;background:var(--chip);border-radius:999px;padding:4px 10px;font-size:12.5px;cursor:pointer;color:var(--ink)}
 .thumb img{width:100%;height:100%;object-fit:cover}
 .thumb.igmini{--s:.5;background:#fff}
 .thumb.igmini .igwrap{position:absolute;left:0;top:0;width:326px;transform-origin:0 0;transform:translateY(calc(-56px * var(--s))) scale(var(--s));pointer-events:none}
@@ -80,10 +127,10 @@ main{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:16px 120px}
 .card{-webkit-tap-highlight-color:transparent}
 .card:focus-visible{outline:2px solid var(--pick);outline-offset:2px}
 .thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font:700 34px var(--display);color:var(--muted)}
-.badge{position:absolute;left:8px;top:8px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(0,0,0,.6);color:#fff;border-radius:6px;padding:2px 7px}
-.star{position:absolute;right:8px;top:6px;color:var(--pick);font-size:18px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
-.card .meta{padding:10px 12px 12px;display:flex;flex-direction:column;gap:3px;min-width:0}
-.card .t{font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.badge{position:absolute;left:8px;bottom:8px;font-size:10.5px;font-weight:700;background:rgba(0,0,0,.5);color:#fff;border-radius:999px;padding:2px 8px;z-index:2}
+.star{position:absolute;right:8px;top:6px;color:var(--pick);font-size:18px;text-shadow:0 1px 3px rgba(0,0,0,.4);z-index:2}
+.card .meta{padding:8px 4px 2px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.card .t{font-size:15px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card .s{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .folders{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:10px;margin-bottom:22px}
 @media (max-width:440px){.folders{grid-template-columns:1fr 1fr}}
@@ -134,7 +181,7 @@ main{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:16px 120px}
 .fab{position:fixed;right:max(16px,calc(50vw - 344px));bottom:calc(env(safe-area-inset-bottom,0px) + 20px);background:var(--pick);color:#1f1a10;border:0;border-radius:999px;padding:14px 20px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer;display:flex;align-items:center;gap:6px;z-index:5}
 
 /* 추가 / 폼 */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.panel{background:var(--surface);border:0;box-shadow:var(--shadow);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
 .panel h2{font:700 20px var(--display);margin:0}
 label.f{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--muted);font-weight:500}
 label.f input,label.f textarea,label.f select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-size:15px;width:100%}
@@ -226,10 +273,11 @@ a.btn{text-decoration:none}
 .cover-prev img{width:100%;height:100%;object-fit:cover}
 .d-sum{color:var(--muted);margin:0 0 10px}
 .facts{display:flex;gap:8px;flex-wrap:wrap}
-.fact{background:var(--chip);border-radius:8px;padding:4px 10px;font-size:13px}
+.fact{background:var(--chip);border-radius:999px;padding:5px 12px;font-size:13px}
 .fact b{font-weight:600}
 .sec{margin-top:24px}
-.sec-h{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:6px}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:2px dashed var(--line);padding-bottom:6px;margin-bottom:6px}
+.sec-h h3{color:var(--accent)}
 .sec-h h3{font:700 19px var(--display);margin:0}
 .scaler{display:flex;align-items:center;gap:4px;font-size:13px;font-variant-numeric:tabular-nums}
 .scaler button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
@@ -254,20 +302,26 @@ ul.tips li{margin:4px 0}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
 .ai-note{font-size:12.5px;color:var(--muted);margin-top:16px}
 
-.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 90px);transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50;max-width:calc(100% - 32px)}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 100px);transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:50;max-width:calc(100% - 32px)}
 .confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:color-mix(in srgb,var(--danger) 12%,transparent);border-radius:10px;padding:10px 12px;margin-top:10px}
 </style>
 </head>
 <body>
 <header class="bar"><div class="bar-in">
   <button class="iconbtn" id="backBtn" aria-label="뒤로" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <h1 id="homeTitle">오늘 뭐 먹지</h1>
+  <h1 id="homeTitle"><span class="logo-bowl" aria-hidden="true">🍳</span>오늘 뭐 먹지</h1>
   <button class="iconbtn cloud" id="cloudBtn" aria-label="온라인 저장" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z"/></svg><span class="dot"></span></button>
   <button class="iconbtn" id="setBtn" aria-label="설정"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
 </div></header>
 
 <main id="app"></main>
-<button class="fab" id="fab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>레시피 추가</button>
+<nav class="tabbar" id="fab" aria-label="메뉴"><div class="tab-in">
+  <button class="tab" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2z"/></svg>홈</button>
+  <button class="tab" data-tab="all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>전체</button>
+  <button class="tab-add" data-tab="add" aria-label="레시피 추가"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button class="tab" data-tab="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>즐겨찾기</button>
+  <button class="tab" data-tab="set"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>설정</button>
+</div></nav>
 <div class="toast" id="toast" hidden></div>
 
 <script>
@@ -643,7 +697,11 @@ hRep({v:view});
 function render(){
   if(view.name!=='list'&&view.name!=='folder'){sel.on=false;sel.ids.clear();app.classList.remove('selmode')}
   document.getElementById('backBtn').hidden=view.name==='list';
-  document.getElementById('fab').hidden=view.name!=='list'&&view.name!=='folder';
+  const tb=document.getElementById('fab');
+  tb.hidden=!['list','folder','settings'].includes(view.name);
+  const cur=view.name==='list'?'home':view.name==='settings'?'set':view.name==='folder'&&view.f==='★'?'fav':view.name==='folder'&&view.f==='*'?'all':'';
+  tb.querySelectorAll('.tab').forEach(b=>{b.classList.toggle('on',b.dataset.tab===cur);b.setAttribute('aria-current',b.dataset.tab===cur?'page':'false')});
+  document.getElementById('setBtn').hidden=!tb.hidden; // 아래 메뉴가 보이면 위 설정 버튼은 숨김
   ({list:renderList,folder:renderList,add:renderAdd,detail:renderDetail,edit:renderEdit,settings:renderSettings}[view.name]||renderList)();
 }
 
@@ -746,17 +804,29 @@ function sortList(list){
   if(sortMode==='cooked') return list.sort((a,b)=>(cookCount(b)-cookCount(a))||(lastCooked(b)>lastCooked(a)?1:lastCooked(b)<lastCooked(a)?-1:0)||((b.rating||0)-(a.rating||0)));
   return list.sort(byFavNew);
 }
+/* 오늘의 추천: 맛있었던 요리(★4 이상)와 아직 안 해 본 요리를 섞어 하루 동안 같은 순서로. "다른 추천"을 누르면 바뀜 */
+let pickOffset=0;
+function todayPicks(){
+  const good=recipes.filter(r=>(r.rating||0)>=4),fresh=recipes.filter(r=>!tried(r)),rest=recipes.filter(r=>!good.includes(r)&&!fresh.includes(r)&&(r.rating||0)!==1);
+  let seed=[...todayStr()].reduce((a,c)=>a*31+c.charCodeAt(0)>>>0,7)+pickOffset*977;
+  const rnd=()=>{seed=(seed*1103515245+12345)>>>0;return seed/4294967296};
+  const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+  const out=[];const g=shuf(good),f=shuf(fresh),o=shuf(rest);
+  while(out.length<8&&(g.length||f.length||o.length)){if(g.length)out.push(g.shift());if(f.length&&out.length<8)out.push(f.shift());if(!g.length&&!f.length&&o.length)out.push(o.shift())}
+  return out;
+}
 /* 별점별 묶음: r5~r1, 아직 안 해 본 것(todo) */
 function ratingScope(f){
   if(f==='todo') return recipes.filter(r=>!tried(r));
   if(f==='r0') return recipes.filter(r=>cookCount(r)>0&&!(r.rating>0)); // 해 먹었는데 별점은 아직
+  if(f==='top') return recipes.filter(r=>(r.rating||0)>=4); // 또 해 먹고 싶은 요리(★4 이상)
   const n=+f.slice(1);return recipes.filter(r=>(r.rating||0)===n);
 }
 
 function renderList(){
   const inFolder=view.name==='folder'?view.f:null;
   const q=filter.q.trim().toLowerCase();
-  const isRate=inFolder&&/^(r[0-5]|todo)$/.test(inFolder);
+  const isRate=inFolder&&/^(r[0-5]|todo|top)$/.test(inFolder);
   const isTime=inFolder&&/^t\d+$/.test(inFolder);
   const isSpice=inFolder==='hot'||inFolder==='mild';
   const scope=inFolder==='★'?recipes.filter(r=>r.fav):isRate?ratingScope(inFolder):isTime?timeScope(inFolder):
@@ -768,7 +838,7 @@ function renderList(){
     // 첫 화면: 폴더 → 최근 담은 레시피
     const tiles=allFolders().map(n=>({n,c:recipes.filter(r=>folderOf(r)===n).length}));
     const favN=recipes.filter(r=>r.fav).length;
-    const recent=[...recipes].sort((a,b)=>b.createdAt-a.createdAt).slice(0,6);
+    const recent=[...recipes].sort((a,b)=>b.createdAt-a.createdAt).slice(0,12);
     // 온라인 저장에 연결 안 된 새 기기(예: 홈 화면에 새로 추가한 앱)면 첫 화면에서 바로 불러올 수 있게
     const fresh=!isConnected()&&!recipes.some(r=>r.id!=='sample');
     const joinBox=fresh?`<div class="joinbox">
@@ -776,42 +846,37 @@ function renderList(){
       <p>다른 폰이나 사파리에서 쓰던 레시피는 <b>연결 코드</b>(RB-로 시작)를 넣으면 전부 불러와요.</p>
       <div class="sel-row"><input id="join_code" placeholder="RB-..." autocomplete="off"><button class="btn primary" id="join_go">불러오기</button></div>
     </div>`:'';
+    const shelf=(title,f,list,extra='')=>list.length?`<section class="shelf"><div class="shelf-h"><h3>${title}</h3><span class="row" style="gap:6px;flex-wrap:nowrap">${extra}${f?`<button class="more" data-f="${f}">더보기 ›</button>`:''}</span></div>
+      <div class="hscroll">${list.map(r=>cardHtml(r)).join('')}</div></section>`:'';
+    const triedN=recipes.filter(tried).length;
+    const top=recipes.filter(r=>(r.rating||0)>=4).sort((a,b)=>(b.rating-a.rating)||(cookCount(b)-cookCount(a)));
+    const tt=TIME_GROUPS.map(g=>({f:g[0],l:g[1],i:g[2],c:timeScope(g[0]).length})).filter(t=>t.c);
+    const hotN=recipes.filter(isSpicy).length,mildN=recipes.length-hotN;
+    const rt=[5,4,3,2,1].map(n=>({f:'r'+n,n,c:recipes.filter(r=>(r.rating||0)===n).length})).filter(t=>t.c);
+    const todoN=recipes.filter(r=>!tried(r)).length,unratedN=recipes.filter(r=>cookCount(r)>0&&!(r.rating>0)).length;
     body=joinBox+(!recipes.length?empty:`
-      <h3 class="sub-h">메뉴별</h3>
-      <div class="folders">
-        ${favN?`<button class="ftile fav" data-f="★"><span class="fi">★</span><span class="fn">즐겨찾기</span><span class="fc">${favN}개</span></button>`:''}
-        ${tiles.map(t=>`<button class="ftile" data-f="${esc(t.n)}"><span class="fi">${folderIcon(t.n)}</span><span class="fn">${esc(t.n)}</span><span class="fc">${t.c}개</span></button>`).join('')}
+      <div class="hello"><h2>오늘은 뭐 먹을까요? 🍽️</h2><p>레시피 ${recipes.length}개가 담겨 있어요${triedN?` · ${triedN}개 해 먹어 봤어요`:''}</p></div>
+      <div class="cats" role="list" aria-label="메뉴별">
+        ${favN?`<button class="cat fav" data-f="★" role="listitem"><span class="ci">★</span><span class="cn">즐겨찾기</span><span class="cc">${favN}</span></button>`:''}
+        ${tiles.map(t=>`<button class="cat" data-f="${esc(t.n)}" role="listitem"><span class="ci">${folderIcon(t.n)}</span><span class="cn">${esc(t.n)}</span><span class="cc">${t.c}</span></button>`).join('')}
       </div>
-      ${(()=>{
-        // 맵기별: 아이들이 먹을 수 있는지
-        const hot=recipes.filter(isSpicy).length,mild=recipes.length-hot;
-        return `<h3 class="sub-h">맵기별</h3><div class="folders">
-          <button class="ftile stile mild" data-f="mild"><span class="fi">🧒</span><span class="fn">안 매운 음식</span><span class="fc">${mild}개 · 아이 OK</span></button>
-          <button class="ftile stile hot" data-f="hot"><span class="fi">🌶️</span><span class="fn">매운 음식</span><span class="fc">${hot}개</span></button>
-        </div>`;
-      })()}
-      ${(()=>{
-        // 조리시간별 묶음(누적: "30분 안에"에는 10분짜리도 들어감)
-        const tt=TIME_GROUPS.map(g=>({f:g[0],l:g[1],i:g[2],c:timeScope(g[0]).length})).filter(t=>t.c);
-        if(!tt.length) return '';
-        return `<h3 class="sub-h">조리시간별</h3><div class="folders">
-          ${tt.map(t=>`<button class="ftile ttile" data-f="${t.f}"><span class="fi">${t.i}</span><span class="fn">${t.l}</span><span class="fc">${t.c}개</span></button>`).join('')}
-        </div>`;
-      })()}
-      ${(()=>{
-        // 별점별 묶음: 해 본 요리가 하나라도 있을 때만
-        if(!recipes.some(tried)) return '';
-        const rt=[5,4,3,2,1].map(n=>({f:'r'+n,n,c:recipes.filter(r=>(r.rating||0)===n).length})).filter(t=>t.c);
-        const todo=recipes.filter(r=>!tried(r)).length;
-        const unrated=recipes.filter(r=>cookCount(r)>0&&!(r.rating>0)).length;
-        return `<h3 class="sub-h">별점별</h3><div class="folders">
-          ${rt.map(t=>`<button class="ftile rtile" data-f="${t.f}"><span class="fi">${t.n}<small>★</small></span><span class="fn">${RATING_LABEL[t.n]}</span><span class="fc">${t.c}개</span></button>`).join('')}
-          ${unrated?`<button class="ftile rtile" data-f="r0"><span class="fi">?</span><span class="fn">별점 안 남김</span><span class="fc">${unrated}개</span></button>`:''}
-          ${todo?`<button class="ftile rtile" data-f="todo"><span class="fi">○</span><span class="fn">아직 안 해 봄</span><span class="fc">${todo}개</span></button>`:''}
-        </div>`;
-      })()}
-      <div class="sub-row"><h3 class="sub-h">최근 담은 레시피</h3><button class="linkbtn" id="seeAll">전체 ${recipes.length}개 보기</button></div>
-      <div class="grid">${recent.map(cardHtml).join('')}</div>`);
+      ${shelf('🎲 오늘의 추천','',todayPicks(),'<button class="reshuffle" id="reshuffle">다른 추천</button>')}
+      ${shelf('🕒 최근 담은 레시피','*',recent)}
+      ${shelf('⚡ 10분 컷 간편 요리','t10',timeScope('t10').sort((a,b)=>(minutesOf(a)-minutesOf(b))||(b.createdAt-a.createdAt)).slice(0,12))}
+      ${shelf('🧒 아이랑 먹는 안 매운 요리','mild',recipes.filter(r=>!isSpicy(r)).sort(byFavNew).slice(0,12))}
+      ${shelf('😋 또 해 먹고 싶은 요리','top',top.slice(0,12))}
+      <section class="findbox">
+        <h3>🔎 조건으로 찾기</h3>
+        <div class="find-row"><span class="fl">조리시간</span><div class="pills">${tt.map(t=>`<button class="pill" data-f="${t.f}">${t.i} ${t.l} <b>${t.c}</b></button>`).join('')}</div></div>
+        <div class="find-row"><span class="fl">맵기</span><div class="pills">
+          <button class="pill mild" data-f="mild">🧒 안 매운 음식 <b>${mildN}</b></button>
+          <button class="pill hot" data-f="hot">🌶️ 매운 음식 <b>${hotN}</b></button></div></div>
+        ${triedN?`<div class="find-row"><span class="fl">별점</span><div class="pills">
+          ${rt.map(t=>`<button class="pill pstar" data-f="${t.f}">${'★'.repeat(t.n)} ${RATING_LABEL[t.n]} <b>${t.c}</b></button>`).join('')}
+          ${unratedN?`<button class="pill" data-f="r0">별점 안 남김 <b>${unratedN}</b></button>`:''}
+          ${todoN?`<button class="pill" data-f="todo">○ 아직 안 해 봄 <b>${todoN}</b></button>`:''}</div></div>`:''}
+      </section>
+      `);
   }else{
     const tags=[...new Set(scope.flatMap(r=>r.tags||[]))];
     const terms=searchTerms(q);
@@ -821,7 +886,7 @@ function renderList(){
     shownIds=list.map(r=>r.id);
     const selBtn=list.length&&!sel.on?`<button class="btn sm" id="selStart">여러 개 옮기기</button>`:'';
     const tg=isTime&&TIME_GROUPS.find(x=>x[0]===inFolder);
-    const fname=inFolder==='hot'?'🌶️ 매운 음식':inFolder==='mild'?'🧒 안 매운 음식':tg?tg[2]+' '+tg[1]:inFolder==='★'?'★ 즐겨찾기':inFolder==='*'?'전체 레시피':inFolder==='todo'?'아직 안 해 본 요리':inFolder==='r0'?'별점 안 남긴 요리':
+    const fname=inFolder==='hot'?'🌶️ 매운 음식':inFolder==='mild'?'🧒 안 매운 음식':tg?tg[2]+' '+tg[1]:inFolder==='★'?'★ 즐겨찾기':inFolder==='*'?'전체 레시피':inFolder==='todo'?'아직 안 해 본 요리':inFolder==='r0'?'별점 안 남긴 요리':inFolder==='top'?'😋 또 해 먹고 싶은 요리':
       isRate?`<span class="rstars">${starsText(+inFolder.slice(1))}</span> ${RATING_LABEL[+inFolder.slice(1)]}`:folderIcon(inFolder)+' '+esc(inFolder);
     const fillBtn=inFolder==='t0'&&scope.length?`<div class="needvid" style="margin-bottom:12px"><p>조리시간이 적혀 있지 않은 레시피예요. AI가 만드는 법을 보고 시간을 한꺼번에 채워 줄 수 있어요. (AI 1회 사용)</p><button class="btn primary" id="fillTime">AI로 조리시간 채우기</button></div>`:'';
     const sortBar=list.length>1?`<div class="sortbar" role="group" aria-label="정렬">${SORTS.map(([k,l])=>`<button class="sortbtn ${sortMode===k?'on':''}" data-sort="${k}" aria-pressed="${sortMode===k}">${l}</button>`).join('')}</div>`:'';
@@ -837,7 +902,8 @@ function renderList(){
   const qi=document.getElementById('q');
   qi.oninput=()=>{filter.q=qi.value;const pos=qi.selectionStart;renderList();const n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
   app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{filter.tag=filter.tag===b.dataset.tag?'':b.dataset.tag;renderList()});
-  app.querySelectorAll('.ftile').forEach(b=>b.onclick=()=>{filter.tag='';filter.q='';go({name:'folder',f:b.dataset.f})});
+  app.querySelectorAll('.ftile,.cat,.more,.pill').forEach(b=>b.onclick=()=>{filter.tag='';filter.q='';go({name:'folder',f:b.dataset.f})});
+  const rs=document.getElementById('reshuffle');if(rs) rs.onclick=()=>{pickOffset++;keepScroll(renderList)};
   app.querySelectorAll('.sortbtn').forEach(b=>b.onclick=()=>{sortMode=b.dataset.sort;try{localStorage.setItem('recipebook.sort',sortMode)}catch(e){}keepScroll(renderList)});
   app.querySelectorAll('.card').forEach(c=>{
     c.onclick=()=>{
@@ -919,7 +985,9 @@ function bindSelBar(){
 function cardHtml(r,terms){
   const th=thumbOf(r);
   const hits=Array.isArray(terms)&&terms.length?matchedIngredients(r,terms):[];
-  const sub=[cookCount(r)?cookCount(r)+'번 해 먹음':'',r.time,r.ingredients.length?'재료 '+r.ingredients.length+'가지':''].filter(Boolean).slice(0,2).join(' · ');
+  const sub=[cookCount(r)?cookCount(r)+'번 해 먹음':'',r.author,r.ingredients.length?'재료 '+r.ingredients.length+'가지':''].filter(Boolean).slice(0,2).join(' · ');
+  const mins=minutesOf(r);
+  const timeChip=mins!=null?`<span class="tchip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>${mins>=60?Math.floor(mins/60)+'시간'+(mins%60?' '+mins%60+'분':''):mins+'분'}</span>`:'';
   const rateLine=r.rating>0?`<span class="cstars" aria-label="별점 ${r.rating}점">${starsText(r.rating)}</span>`:'';
   // 인스타는 표지 사진을 가져올 수 없어서, 게시물 화면을 작게 띄워 영상 첫 장면이 보이게 함
   const igMini=!th&&r.platform==='instagram'&&r.videoId;
@@ -927,7 +995,7 @@ function cardHtml(r,terms){
     <div class="thumb ${igMini?'igmini':''}">${th?`<img src="${esc(th)}" alt="" loading="lazy">`:
       igMini&&!igIsBad(r.videoId)?`<div class="igwrap" data-ig="${r.id}" data-igbox="${esc(r.videoId)}"></div>`:
       `<div class="ph">${esc(r.title.slice(0,1))}</div>`}
-      ${r.platform!=='none'?`<span class="badge">${PLATFORM_NAME[r.platform]||''}</span>`:''}${r.fav?'<span class="star">★</span>':''}${isSpicy(r)?'<span class="badge hotb">🌶️ 매움</span>':''}</div>
+      ${timeChip}${r.platform!=='none'?`<span class="badge">${PLATFORM_NAME[r.platform]||''}</span>`:''}${r.fav?'<span class="star">★</span>':''}${isSpicy(r)?'<span class="badge hotb">🌶️ 매움</span>':''}</div>
     <div class="meta"><span class="t">${esc(r.title)}</span>${rateLine}${hits.length?`<span class="hit">재료: ${hits.map(esc).join(', ')}</span>`:`<span class="s">${esc(sub||r.author||'')}</span>`}</div></div>`;
 }
 /* ───────── 인스타그램 표시: 인스타 공식 embed.js 사용 ─────────
@@ -1062,10 +1130,10 @@ function renderAdd(){
     </div>`):''}
     <input id="file" type="file" accept="video/*" hidden ${addState.busy?'disabled':''}>
     <input id="imgs" type="file" accept="image/*" multiple hidden ${addState.busy?'disabled':''}>
-    <details class="opt" ${(addState.file||imgs.length)?'open':''}>
-    <summary>더 정확하게: 영상·캡처 사진 넣기 (선택)</summary>
+    <details class="opt" ${(addState.file||imgs.length||addState.openExtras)?'open':''}>
+    <summary>영상·캡처 사진 넣기 (선택)</summary>
     <div class="photos">
-      <p class="hint" style="margin:0">링크만 넣어도 인스타는 게시물 설명을 읽어서 정리해요. 설명에 레시피가 부족한 영상만 아래에 영상(릴스 저장본·화면 기록)이나 캡처 사진을 넣어 주세요.</p>
+      <p class="hint" style="margin:0">인스타 영상은 레시피 캡처 사진이나 저장한 영상(릴스 다운로드·화면 기록)을 함께 넣으면 훨씬 정확해요. 다 넣은 뒤 아래 <b>AI로 레시피 정리하기</b>를 눌러 주세요.</p>
       <div class="ph-h"><b>레시피 영상</b></div>
       ${addState.file?`<div class="vid-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
         <span>${esc(addState.file.name||'영상')} · ${(addState.file.size/1048576).toFixed(1)}MB</span><button class="ph-x" id="vid_x" aria-label="영상 빼기" ${addState.busy?'disabled':''}>×</button></div>`:
@@ -1102,7 +1170,8 @@ function renderAdd(){
     if(f&&f.size>MAX_VIDEO_MB*1048576){toast('영상이 '+MAX_VIDEO_MB+'MB보다 커요. 레시피 부분만 잘라서 넣어 주세요');return}
     addState.file=f;addState.err='';
     // "영상 고르기"로 고른 거면 바로 정리 시작
-    if(f&&addState.needVideo&&settings.apiKey){addState.needVideo=false;addState.allowDup=true;runAnalyze()} else renderAdd();
+    if(f){addState.needVideo=false;addState.openExtras=true}
+    renderAdd(); // 고른 뒤에도 저절로 시작하지 않음: 다 넣고 버튼을 누르면 시작
   };
   const vx=document.getElementById('vid_x');if(vx) vx.onclick=()=>{addState.file=null;renderAdd()};
   document.getElementById('imgs').onchange=async e=>{
@@ -1110,9 +1179,8 @@ function renderAdd(){
     if(e.target.files.length>files.length) toast('사진은 10장까지 넣을 수 있어요');
     for(const f of files){try{addState.images.push(await prepImage(f))}catch(err){toast(err.message)}}
     addState.err='';
-    // 카운트다운 중 "캡처 사진 추가"로 고른 거면 링크+사진으로 바로 정리
-    if((addState.autoAfterPhotos||addState.needVideo)&&addState.images.length&&settings.apiKey&&parseUrl(addState.raw)){addState.autoAfterPhotos=false;addState.needVideo=false;addState.allowDup=true;runAnalyze()}
-    else renderAdd();
+    if(addState.images.length){addState.needVideo=false;addState.openExtras=true}
+    renderAdd(); // 고른 뒤에도 저절로 시작하지 않음
   };
   // 화면을 다시 그리면 열린 사진 고르기 창이 끊길 수 있어서, 안내 칸만 숨김
   const cdp=document.getElementById('cd_photo');if(cdp) cdp.onclick=()=>{stopCountdown();addState.cd=0;addState.autoAfterPhotos=true;const b=cdp.closest('.cdbox');if(b)b.hidden=true;const g=document.getElementById('go');if(g)g.hidden=false};
@@ -1142,17 +1210,13 @@ function renderAdd(){
 /* 링크를 넣은 뒤 자동 시작: 유튜브는 바로(영상을 직접 봄), 인스타 등은 4초 기다리며 캡처 사진을 더할 기회를 줌 */
 let cdTimer=null;
 function stopCountdown(){clearInterval(cdTimer);cdTimer=null}
+/* 링크를 넣어도 저절로 시작하지 않음(사용자 요청): 사진·영상을 더 넣고 "AI로 레시피 정리하기"를 눌러야 시작.
+   링크가 들어오면 사진·영상 칸을 펼쳐서 바로 넣을 수 있게만 함 */
 function autoStart(){
+  stopCountdown();addState.cd=0;
   const l=parseUrl(addState.raw);
-  if(!settings.apiKey||!l||l.platform==='web'||addState.busy){renderAdd();return}
-  if(findDup(l)&&!addState.allowDup){renderAdd();return} // 중복 안내 먼저
-  if(l.platform==='youtube'||addState.images.length||addState.file||addState.caption.trim()){runAnalyze();return}
-  stopCountdown();addState.cd=4;renderAdd();
-  cdTimer=setInterval(()=>{
-    if(view.name!=='add'||!addState.cd||addState.busy){stopCountdown();return}
-    addState.cd--;const el=document.getElementById('cd');if(el)el.textContent=addState.cd;
-    if(addState.cd<=0){stopCountdown();runAnalyze()}
-  },1000);
+  if(l&&l.platform!=='web') addState.openExtras=true;
+  renderAdd();
 }
 /* 분석 중 화면 꺼짐 방지(지원하는 기기만) */
 /* ───────── 화면 꺼짐 방지 ─────────
@@ -1686,7 +1750,15 @@ document.getElementById('homeTitle').onclick=()=>go({name:'list'});
 document.getElementById('backBtn').onclick=()=>history.length>1?history.back():go({name:'list'});
 document.getElementById('setBtn').onclick=()=>go({name:'settings'});
 document.getElementById('cloudBtn').onclick=()=>{toast(document.getElementById('cloudBtn').title);syncNow()};
-document.getElementById('fab').onclick=()=>go({name:'add'});
+document.getElementById('fab').onclick=e=>{
+  const b=e.target.closest('[data-tab]');if(!b)return;
+  const t=b.dataset.tab;filter.tag='';filter.q='';
+  if(t==='home')go({name:'list'});
+  else if(t==='all')go({name:'folder',f:'*'});
+  else if(t==='fav')go({name:'folder',f:'★'});
+  else if(t==='set')go({name:'settings'});
+  else if(t==='add')go({name:'add'});
+};
 
 /* 폰의 "공유하기 → 레시피북"(또는 ?url=...)으로 열리면 바로 분석 시작 */
 (async function(){
@@ -1702,7 +1774,7 @@ document.getElementById('fab').onclick=()=>go({name:'add'});
     const rest=shared.replace(m[0],'').trim();
     if(rest.length>60) addState.caption=rest;
     hRep({v:{name:'list'}},location.pathname);go({name:'add'});
-    if(settings.apiKey) runAnalyze();
+    autoStart(); // 저절로 시작하지 않고 사진·영상 칸만 펼침
   }
   else render();
 })();
