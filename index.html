@@ -1814,6 +1814,8 @@ function fridgeHas(name,items){
   // 시중 제품 이름("비비고 왕교자")은 알아본 기본 재료 이름("만두")으로도 찾음
   return items.some(it=>{const a=getAlias(it);return one(it)||!!(a&&a.b&&a.b!==it&&one(a.b))});
   function one(it){const w=String(it).toLowerCase();
+    // 같은 종류 면·만두 등은 제품 이름이 달라도 같은 걸로 봄(사누끼우동면 ↔ 생생우동·우동사리, 왕교자 ↔ 만두)
+    const fw=famOf(w);if(fw>=0&&fw===famOf(n)) return true;
     // "대패삼겹살", "구이용 삼겹살", "소고기 국거리"처럼 종류·용도가 붙은 재료는 핵심 이름(삼겹살·소고기)으로도 찾음
     const cw=fridgeCore(w);
     if(cw!==w.replace(/\s+/g,'')&&cw.length>=2&&(hasTerm(n,cw)||toks.some(t=>t===cw))) return true;
@@ -1826,6 +1828,8 @@ function fridgeHas(name,items){
     }
     return hasTerm(n,w)||toks.some(t=>t.length>=2&&(w===t||w.includes(t)&&t.length>=2&&w.length-t.length<=3))}
 }
+const FAMILIES=[/우동/,/쫄면/,/칼국수/,/짜파게티|짜장라면/,/라면/,/당면/,/소면|중면|국수/,/파스타|스파게티|펜네|링귀니|푸실리/,/만두|교자/,/어묵|오뎅/,/햇반|즉석밥|흰밥|공기밥/];
+const famOf=s=>{s=String(s).replace(/\s+/g,'');if(/스프|소스|양념|육수/.test(s)) return -1;return FAMILIES.findIndex(re=>re.test(s))};
 /* ───── 시중 제품 이름 알아보기: "사누끼우동면"→우동면, "비비고 왕교자"→만두, "햇반"→즉석밥 ─────
    settings.fridgeAlias = [{n:'비비고 왕교자', b:'만두', c:'ready'}] (동기화). 이름만으로 모르는 재료는 AI에게 한꺼번에 물어봄.
    settings.fridgePic = [{n, p:작은 사진}] 제품 사진(직접 찍은 것) */
